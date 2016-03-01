@@ -1,0 +1,20 @@
+// area de triangulos.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main()
+{
+	float A,b,Area;
+	cout<< "ingresa altura: ";
+	cin>> A;
+	cout<< "ingresa base: ";
+	cin>> b;
+	Area= (b*A)/2;
+	cout<<  "area es: " << Area;
+	getch();
+}
+
