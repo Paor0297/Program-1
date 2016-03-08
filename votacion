@@ -1,0 +1,21 @@
+// votacion.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+int main()
+{
+	int a;
+	cout << "ingrese la edad" << endl;
+	cin >> a;
+	if (a>=18) {
+		cout << " es mayor de edad, por tanto puede votar" << endl;
+	} else {
+		cout << "es menor de edad; por tanto no puede votar" << endl;
+	}
+	getch ();
+	return 0;
+}
