@@ -1,0 +1,9 @@
+Proceso paralelogramo
+	definir A, B como REAL;
+	Escribir "ingrese el area";
+	leer A;
+	Escribir "ingrese la base";
+	Leer B;
+	AREA<-A*B
+	ESCRIBIR AREA;
+FinProceso
