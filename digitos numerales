@@ -1,0 +1,34 @@
+// unidad de conteo.cpp : Defines the entry point for the console application.
+//pablo ortiz
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main()
+{
+	int d;
+	int m;
+	int n;
+	cout << " ingrese el numero" << endl;
+	cin >> n;
+	m = 0;
+		while ((n>0)) {
+		d = n%10;
+		n = n/10;
+		if (m==0) {
+			cout << " unidades" << d << endl;
+		}
+		if ((m==1)) {
+			cout << " decenas" << d << endl;
+		}
+		if ((m==2)) {
+			cout << "centenas" << d << endl;
+		}
+		if ((m==3)) {
+			cout << "unidad de mil" << d << endl;
+		}
+		m = m+1;
+	getch();
+}
