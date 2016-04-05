@@ -1,0 +1,38 @@
+// notasnumro2.cpp : Defines the entry point for the console application.
+// programa con do while
+
+ #include "stdafx.h"
+ #include <iostream>
+ #include "conio.h"
+ using namespace std;
+ void main()
+{
+	int nr,i;
+	float np,p1,p2,p3,ef,nf,s;
+	char m; // son caracteres que solo ingresan letras
+	s=0;
+	i=1;
+	do
+	{
+		cout<< "ingrese el numero de registro: "<< endl;
+        cin>> nr;
+		cout<< "escribir nota practica:"<< endl;
+		cin>> np;
+		cout<< "escribir nota primer parcial:"<< endl;
+		cin>> p1;
+		cout<< "escribir nota segundo parcial:"<< endl;
+		cin>> p2;
+		cout<< "escribir nota tercer parcial:"<< endl;
+		cin>> p3;
+		cout<< "escribir nota examen final:"<< endl;
+		cin>> ef;
+		nf=(np*0.2)+((p1+p2+p3)/3)*0.4+ef*0.4;
+		s=s+nf;
+		cout<< "desea continuar";
+		cin>>m;
+		i++;
+	}while (m!='N');
+	cout<< "el promedio es:" << s/(i-1)<< endl;
+	getch();
+
+ }
