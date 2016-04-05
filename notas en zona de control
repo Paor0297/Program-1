@@ -1,0 +1,38 @@
+// notaszona.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+using namespace std;
+void main()
+{
+	float np,p1,p2,p3,ef,promedio,nf;
+	int nr,i=0;
+	cout<< "ingrese el numero de registro: "<< endl;
+    cin>> nr;
+	promedio=0;
+	while (nr!=-999)
+	{
+		cout<< "escribir nota practica:"<< endl;
+		cin>> np;
+		cout<< "escribir nota primer parcial:"<< endl;
+		cin>> p1;
+		cout<< "escribir nota segundo parcial:"<< endl;
+		cin>> p2;
+		cout<< "escribir nota tercer parcial:"<< endl;
+		cin>> p3;
+		cout<< "escribir nota examen final:"<< endl;
+		cin>> ef;
+		nf=(np*0.2)+((p1+p2+p3)/3)*0.4+ef*0.4;
+		promedio=promedio+nf;
+		system("cls");
+		cout<< "ingrese el numero de registro: "<< endl;
+        cin>> nr;
+		i++; // i<-i+1 contandor
+	}
+	cout<< "el promedio final es "<< endl;
+	cout<< promedio/i;
+	getch();
+}
