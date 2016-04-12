@@ -16,11 +16,13 @@ void main()
 	cin>>x;
 	cout<<"ingrese el valor de n: ";
 	cin>>n;
-	}while ((x<0)&&(n<0));
+	}while ((x<0)||(n<0));
 	s=0;
 	fac=1;
-	for (i=1;i<=n;i++)
-		s=s+(pow(x,i)/fac*i);
+	for (i=1;i<=n;i++){
+		s=s+(pow(x,i)/(fac*i));
+		fac=fac*i;
+	}
 	cout<< "el factorial de "<< n <<" es: "<< s;
 	getch();
 }
