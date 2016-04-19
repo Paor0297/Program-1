@@ -1,0 +1,16 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+ using namespace std;
+  void main()
+  {
+	  int HH,MM,SS;
+	  for (HH=0;HH<24;HH++)
+	  for (MM=0;MM<60;MM++)
+	  for (SS=0;SS<60;SS++)
+	  cout<< HH << ":" << MM << ":"<< SS <<endl;
+	  getch();
+	  
+	  
+  }
