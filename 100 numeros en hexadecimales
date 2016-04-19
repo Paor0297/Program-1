@@ -1,0 +1,17 @@
+// numeros.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+ using namespace std;
+  void main()
+  {
+	  int n;
+	  for (n=0;n<=100;n=n+1) 
+		  cout << std:: dec << std:: oct << n << endl;
+	  getch();
+
+  }
+
+
