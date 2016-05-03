@@ -1,0 +1,24 @@
+// funciones ejemplo 1.cpp : Defines the entry point for the console application.
+//
+// Ejemplo: calcular el volumen de un cilindro,
+//se ingresan como datos de entrada su radio y altura
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+float vol_cilindro(float r, float a); //prototipo de la funcion
+using namespace std;
+int main() {
+    float radio, altura, volumen;	
+    cout <<"Ingrese el radio:" ; 
+	cin >>radio;	
+    cout <<"Ingrese la altura:"; cin >> altura;	
+    volumen= vol_cilindro(radio,altura); //llamada de la funcion
+    cout <<"El volumen es:" <<volumen;  
+	getch();
+    return 0; 
+ }
+//Declaracion o defenicion de la funcion
+float vol_cilindro (float r, float a)
+ { float v= 3.141516*r*r*a ;	
+    return v;   
+}
