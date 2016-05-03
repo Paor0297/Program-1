@@ -1,0 +1,27 @@
+// funciones ejemplo numero 2.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+float MontoTotal (float H,float C);
+int _tmain()
+{
+	float  Hora, Costo, MT;
+	cout<< "ingrese el numero de hora: ";
+	cin>> Hora;
+	cout<< "ingrese el valor de costo: ";
+	cin>> Costo;
+	MT = MontoTotal ( Hora,Costo);
+	cout<< " EL MONTO DEL TRABAJADOR POR HORA ES DE : "<< MT << " BS.";
+	getch();
+	return 0;
+}
+float MontoTotal (float H,float C)
+{
+	float TOTAL = H * C;
+	return TOTAL;
+}
