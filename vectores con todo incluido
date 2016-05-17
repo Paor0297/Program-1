@@ -1,0 +1,78 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define max 100
+ using namespace std;
+ void cargar (double a[],int tam);
+ int BusquedaLineal(double a[],int b,int tam);
+ void Burbuja (double a[], int tam);
+ void mostrar (double a[], int tam);
+ double promedio (double a[], int tam);
+ void main()
+ {
+	double vec [max], prom;
+	int tam,n,k,pos;
+	do
+	{
+		cout<<" ingrese el numero de elementos del vector: ";
+		cin>>n;
+
+	}while ((0>=n) || (n>=100));
+	cargar (vec,n);
+	//busqueda lineal
+	cout<<endl<<"ingrese el elemento a buscar: ";
+	cin>>k;
+	pos= BusquedaLineal(vec,k,n);
+	if(pos==-1)
+		cout<<" el elemento no ha sido encontrado";
+	else
+		cout<<" el elemento esta en la posicion: "<<pos<<endl;
+	// Burbuja clasificatoria
+	Burbuja (vec,n);
+	mostrar (vec,n);
+	prom = promedio (vec,n);
+	cout<<" el valor del promedio es: "<< prom<< endl;
+	getch();
+ }
+
+ void cargar (double a[],int tam)
+ {
+	 for (int i=0;i<tam;i++)
+	 {
+		 cout<<"a["<<i<<"]=";
+		 cin>> a[i];
+	 }
+ }
+ void mostrar (double a[], int tam)
+ {
+	 cout<< " vector clasificatorio ascendente es: "<<endl;
+	 for (int i=0;i<tam;i++)
+	 {
+		 cout<<"a["<<i<<"]="<< a[i]<<endl;
+	 }
+ }
+ double promedio (double a[], int tam)
+ {
+	 double p=0;
+	 for (int i=0;i<tam;i++)
+	 
+		 p=p+a[i];
+	 return (p/tam);	 
+ }
+ //Burbuja clasificatoria de tipo ascendente
+ void Burbuja(double a[],int tam){
+ for(int i = 0; i< tam - 1 ; i++)
+   for(int j = i+1; j< tam;j++)
+     if(a[i]>a[j]){
+       int temp = a[i];
+       a[i]=a[j];
+       a[j]=temp;
+    }
+}
+ // Busqueda de un elemento
+ int BusquedaLineal(double a[],int b,int tam){
+  for(int i = 0; i< tam; i++)
+    if(a[i]==b)
+       return i;
+  return -1;
+}
