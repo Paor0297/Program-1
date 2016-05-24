@@ -1,0 +1,54 @@
+// practico vector num 2.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define max 100
+using namespace std;
+ void cargar (float a[], int tam);
+ void mostrar(float a[], int tam);
+ 
+ void main()
+ {
+	 int opcion;
+	 float vector[max],min;
+	 int i=0,n;
+	 min=vector[max];
+	 cout<<"              MENU            "<<endl;
+	 cout<<"digite la opcion que desea: ";
+	 cin>>opcion;
+	 cout<<"ingrese el numero de terminos"<<endl;
+	 cin>>n;
+	 switch(opcion)
+	 {
+	 case 1:cout<<"cargar el vector";
+		 break;
+		 cargar (vector,n);
+	 case 2:cout<<" mostrar el vector ";
+		 mostrar (vector,n);
+		 break;
+	 case 3:cout<<" el valor minimo del vector ";
+		 cout << min;
+		 break;
+	 case 0:cout<<" salir ";
+		 break;
+	 default:cout<<" no digito ninguna opcion ";
+	 }
+	 getch();
+ }
+	void mostrar(float a[], int tam)
+	{
+		float vec=0,minimo;
+		int c,n;
+		minimo = vec;
+		cout<<"ingrese el numero de terminos"<<endl;
+	 cin>>n;
+		cin>>n;
+		for(c=0;c<=n;c++);
+			
+
+
+
+	}
+
