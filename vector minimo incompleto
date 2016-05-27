@@ -1,4 +1,4 @@
-// practico vector num 2.cpp : Defines the entry point for the console application.
+// vector valor minimo.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -8,13 +8,12 @@
 using namespace std;
  void cargar (float a[], int tam);
  void mostrar(float a[], int tam);
- 
+ void minimo (float a[], int tam);
  void main()
  {
-	 int opcion;
 	 float vector[max],min;
-	 int i=0,n;
-	 min=vector[max];
+	 int n;
+	 int opcion;
 	 cout<<"              MENU            "<<endl;
 	 cout<<"digite la opcion que desea: ";
 	 cin>>opcion;
@@ -25,30 +24,48 @@ using namespace std;
 	 case 1:cout<<"cargar el vector";
 		 break;
 		 cargar (vector,n);
+		 	 getch();
 	 case 2:cout<<" mostrar el vector ";
 		 mostrar (vector,n);
+		 	 getch();
 		 break;
 	 case 3:cout<<" el valor minimo del vector ";
+		 minimo (vector,n);
 		 cout << min;
+		 	 getch();
 		 break;
 	 case 0:cout<<" salir ";
+		 	 getch();
 		 break;
 	 default:cout<<" no digito ninguna opcion ";
-	 }
-	 getch();
+		 	 getch();
+	 }	
  }
-	void mostrar(float a[], int tam)
+	void cargar (float a[max], int tam)
 	{
-		float vec=0,minimo;
-		int c,n;
-		minimo = vec;
-		cout<<"ingrese el numero de terminos"<<endl;
-	 cin>>n;
-		cin>>n;
-		for(c=0;c<=n;c++);
-			
-
-
-
+		int i;
+		for (i=0;i<tam;i++)
+		{
+			cout<<"v[",i,"]=";
+			cin>>a[i];
+		}
 	}
 
+	void mostrar(float a[max], int tam)
+	{
+		int i;
+		for (i=0;i<tam;i++)
+		cout<<"v["<<i<<"]="<< a[i]<<endl;
+	}
+	void minimo(float a[max], int tam)
+	{
+		int i;
+		float minimo;
+		minimo= a[0];	
+		for (i=1;i<tam;i++)
+		{
+			if (a[i]< minimo)
+				minimo=a[i];
+		}
+		return (minimo);
+	}
