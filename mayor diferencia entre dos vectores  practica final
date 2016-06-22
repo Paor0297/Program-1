@@ -1,0 +1,34 @@
+// mayor diferencia de dos vectores.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+using namespace std;
+void cargar ( int vector[MAX],int tam);
+void mostrar ( int vector[MAX],int tam);
+double mayor1 (int vectorA[MAX],int tam);
+double menor1 ( int vectorA[MAX],int tam);
+double mayor2 (int vectorB[MAX],int tam);
+double menor2 ( int vectorB[MAX],int tam);
+double diferencia (int vectorA[MAX],int vectorB[MAX]);
+void main()
+{
+	int A[MAX],B[MAX],n,p,dif;
+	cout<< " ingrese la dimensiomn del primer vector"<<endl;
+	cin>> n;
+	cargar(A,n);
+	cout<< " ingrese la dimensiomn del segundo vector"<<endl;
+	cin>> p;
+	cargar(B,p);
+	cout<<endl;
+	mostrar(A,n);
+	mostrar(B,p);
+	mayor1(A,n);
+	menor1(A,n);
+	mayor2(B,n);
+	menor2(B,n);
+	dif = diferencia (A,B);
+	cout<< "la mayor diferencia es:" << dif << endl;
+}
