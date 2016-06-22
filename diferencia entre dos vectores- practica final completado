@@ -1,0 +1,100 @@
+// diferencia mas grande entre dos vectores.cpp : Defines the entry point for the console application.
+//
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+using namespace std;
+void cargar ( int vector[MAX],int tam);
+void mostrar ( int vector[MAX],int tam);
+double mayor1 (int vectorA[MAX],int tam);
+double menor1 ( int vectorA[MAX],int tam);
+double mayor2 (int vectorB[MAX],int tam);
+double menor2 ( int vectorB[MAX],int tam);
+void main()
+{
+	int A[MAX],B[MAX],n,p,dif1,dif2,DIF,may1,may2,men1,men2;
+	cout<< " ingrese la dimensiomn del primer vector"<<endl;
+	cin>> n;
+	cargar(A,n);
+	cout<< " ingrese la dimensiomn del segundo vector"<<endl;
+	cin>> p;
+	cargar(B,p);
+	cout<<endl;
+	cout<<"el mayor del primer vector es: ";
+	may1= mayor1(A,n);
+	cout<< may1<<endl;
+	cout<<"el menor del primer vector es: ";
+	men1= menor1(A,n);
+	cout<< men1<<endl;
+	cout<<"el mayor del segundo vector es: ";
+	may2= mayor2(B,n);
+	cout<< may2<<endl;
+	cout<<"el menor del segundo vector es: ";
+	men2= menor2(B,n);
+	cout<< men2<<endl;
+	cout<<"la primera diferencia es: ";
+	dif1 = may1- men2 ;
+	cout<< dif1<<endl;
+	cout<<"la segunda diferencia es: ";
+	dif2 = may2- men1 ;
+	cout<< dif2<<endl;
+	if (dif1>dif2) DIF= dif1;
+	if (dif1<dif2) DIF= dif2;
+	cout<< "la mayor diferencia es:" << DIF << endl;
+	mostrar(A,n);
+	mostrar(B,p);
+	getch();
+}
+void cargar ( int vector[MAX],int tam)
+{
+	for(int i=0;i<tam;i++)
+		{ 
+			cout<<"v["<<i<<"] =";
+            cin>> vector[i];
+	}
+}
+void mostrar ( int vector[MAX],int tam)
+{
+	for(int i=0;i<tam;i++)
+		cout<<"v["<<i<<"] ="<<vector[i]<<endl;
+
+}
+double mayor1 (int vectorA[MAX],int tam)
+{
+	int may1;
+	may1 = vectorA[0];
+	for (int i=0; i<tam;i++)
+		if(vectorA[i]>may1) may1= vectorA[i];
+	return (may1);
+
+}
+double mayor2 (int vectorB[MAX],int tam)
+{
+	int may2;
+	may2 = vectorB[0];
+	for (int i=0; i<tam;i++)
+		if(vectorB[i]>may2) may2= vectorB[i];
+	return (may2);
+
+}
+double menor1 (int vectorA[MAX],int tam)
+{
+	int men1;
+	men1 = vectorA[0];
+	for (int i=0; i<tam;i++)
+		if(vectorA[i]<men1) men1= vectorA[i];
+	return (men1);
+
+}
+double menor2 (int vectorB[MAX],int tam)
+{
+	int men2;
+	men2 = vectorB[0];
+	for (int i=0; i<tam;i++)
+		if(vectorB[i]<men2) men2= vectorB[i];
+	return (men2);
+
+}
