@@ -1,0 +1,50 @@
+// concatenar vectores.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#define MAX 100
+#include "conio.h"
+using namespace std;
+void cargar ( float vector[MAX], int tam);
+void mostrar ( float vector[MAX], int tam);
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	float A[MAX],B[MAX],C[MAX];
+	int n,p,s;
+	cout<<" la dimension del primer vector es"<<endl;
+	cin>>n;
+	cargar(A,n);
+	
+	
+	cout<<" la dimension del segundo vector es"<<endl;
+	cin>>p;
+	cargar(B,p);
+	
+	cout<<" la dimension del vector  C es"<<endl;
+	s=n+p;
+	
+	cout<<" la dimension del vector C["<< s <<"]"<<endl;
+	for (int i=0; i<s ;i++)
+	{
+		if (i<n)	C[i]=A[i];
+		if (i>=n)   C[i]=B[i-n];
+	}
+	mostrar(A,n);
+	mostrar(B,p);
+	mostrar(C,s);
+	getch();
+	return 0;
+}
+void cargar ( float vector[MAX], int tam)
+{
+	for (int i=0; i<tam; i++)
+		cin>> vector [i];
+}
+void mostrar ( float vector[MAX], int tam)
+{
+	for (int i=0; i<tam; i++)
+		cout<< vector [i] << " ";
+	cout<<endl;
+}
