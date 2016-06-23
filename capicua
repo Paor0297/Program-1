@@ -1,0 +1,38 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+#define MAX 100 
+using namespace std;
+void main ()
+{
+	int a[MAX], b[MAX], n, j;
+	bool capicua = true;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+	j = n-1;
+	for (int i = 0; i < n; i++)
+	{
+		b[i] = a[j];
+		j--;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << b[i] <<" ";
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++)
+	{
+		if (a[i] != b[i]) capicua = false;
+	}
+	if (capicua == true) cout << "Capicua" << endl;
+	else cout << "No capicua" << endl;
+	getch();
+}
+
+/// n = 6
+/// 0 1 2 3 4 5
+/// 1 2 1 2 1 1
