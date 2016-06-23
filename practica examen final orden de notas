@@ -1,0 +1,61 @@
+// ordenar vectores.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+#include "conio.h"
+#define MAX 100
+void cargar (double  a[], std::string b[], int tam);
+void mostrar (double a[], std::string b[], int tam);
+void burbuja (double a[], std::string b[], int tam);
+using namespace std;
+
+void main()
+{
+	double a[MAX],notas;
+	int n;
+	string b[MAX];
+	cout<<"colocar la cantidad de notas"<<endl;
+	cin>> n;
+	cargar(a, b, n);
+	burbuja (a, b, n);
+	mostrar (a, b, n);
+	getch();
+}
+void cargar (double  a[], std::string b[], int tam)	
+{
+	for (int i=0; i < tam; i++)
+		{
+			cout<< " nombre del alumno y la nota: ";
+			cin>>b[i]>> a[i];
+			
+	}
+}
+void mostrar (double  a[], std::string b[], int tam)	
+{
+	for (int i=0; i < tam; i++)
+		{
+			cout << "El alumno se llama: " << b[i] << endl;
+			cout<<"Su nota es: "<< a[i]<<endl;
+	}
+}
+void burbuja (double a[], std::string b[], int tam)
+{
+	double auxNotas;
+	string auxNombre;
+	 for(int i=0;i<tam;i++)
+		 for(int j=i+1;j<tam;j++)
+		 {
+			 if(a[i]>a[j])
+			 {
+				 auxNotas=a[j];
+				 a[j]=a[i];
+				 a[j]=auxNotas;
+				 auxNombre=b[j];
+				 b[j]=b[i];
+				 b[j]=auxNombre;
+
+			 }
+		 }
+}
